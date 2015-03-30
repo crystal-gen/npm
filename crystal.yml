@@ -1,0 +1,34 @@
+name: npm
+version: 1.4.15
+description: NPM for Crystal.
+
+author:
+  name: Chris Tate
+  email: chris@studiotate.com
+  url: http://studiotate.com
+copyright: 2015 Studio Tate
+
+gen:
+  file:
+    package:
+      dest: package.json
+  spec:
+    dependencies:
+      key: name
+      type: object
+      value: version
+    devDependencies:
+      key: name
+      type: object
+      value: version
+      
+generators:
+  gitignore:
+    pass: true
+    path: .
+    spec:
+      items:
+        - node_modules/
+    version: latest
+  project:
+    version: latest
