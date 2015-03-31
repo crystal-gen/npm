@@ -1,3 +1,3 @@
-# npm v1.4.15
+# npm v0.1.0
 
 NPM for Crystal.
