@@ -13,6 +13,10 @@ gen:
     package:
       dest: package.json
   spec:
+    bin:
+      key: name
+      type: object
+      value: path
     dependencies:
       key: name
       type: object
@@ -21,6 +25,13 @@ gen:
       key: name
       type: object
       value: version
+    homepage:
+      type: string
+    license:
+      type: string
+    keywords:
+      key: keyword
+      type: array
       
 generators:
   gitignore:

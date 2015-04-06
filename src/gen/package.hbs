@@ -3,6 +3,19 @@
 	"name": "{{{@name}}}",
 	"version": "{{{@version}}}",
 	"description": "{{{@description}}}",
+	{{#if @author}}
+	"author": "{{{@author.name}}} <{{{@author.email}}}>",
+	{{/if}}
+	{{#if homepage}}
+	"homepage": "{{{homepage}}}",
+	{{/if}}
+	
+	{{#if bin}}
+	"bin": {
+		{{#bin}}
+		"{{{name}}}": "{{{path}}}"{{#unless @last}},{{/unless}}
+		{{/bin}}
+	},{{/if}}
 	
 	"dependencies": {
 		{{#dependencies}}
@@ -13,7 +26,15 @@
 		{{#devDependencies}}
 		"{{{name}}}": "{{{version}}}"{{#unless @last}},{{/unless}}
 		{{/devDependencies}}
-	}{{/if}}{{#if @repository}},
+	}{{/if}}{{#if license}},
+	
+	"license": "{{license}}"{{/if}}{{#if keywords}},
+	
+	"keywords": [
+		{{#keywords}}
+		"{{{keyword}}}"{{#unless @last}},{{/unless}}
+		{{/keywords}}
+	]{{/if}}{{#if @repository}},
 	
 	"repository": {
 		"type": "{{{@repository.type}}}",
