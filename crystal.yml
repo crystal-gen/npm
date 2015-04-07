@@ -1,6 +1,6 @@
 name: npm
 version: 0.1.0
-description: NPM for Crystal.
+description: "[npm](http://npmjs.com) generator for [Crystal](http://crystal.sh)"
 
 author:
   name: Chris Tate
@@ -12,6 +12,7 @@ gen:
   file:
     package:
       dest: package.json
+      type: json
   spec:
     bin:
       key: name
@@ -32,6 +33,8 @@ gen:
     keywords:
       key: keyword
       type: array
+    private:
+      type: string
       
 generators:
   gitignore:

@@ -1,4 +1,5 @@
 # npm v0.1.0
 
-NPM for Crystal.
+
+[npm](http://npmjs.com) generator for [Crystal](http://crystal.sh)
 

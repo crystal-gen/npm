@@ -9,13 +9,17 @@
 	{{#if homepage}}
 	"homepage": "{{{homepage}}}",
 	{{/if}}
-	
+	{{#if private}}
+	"private": true,
+	{{/if}}
 	{{#if bin}}
+	
 	"bin": {
 		{{#bin}}
 		"{{{name}}}": "{{{path}}}"{{#unless @last}},{{/unless}}
 		{{/bin}}
-	},{{/if}}
+	},
+	{{/if}}
 	
 	"dependencies": {
 		{{#dependencies}}
