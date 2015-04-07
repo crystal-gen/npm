@@ -1,46 +1,62 @@
 {
 	
 	"name": "{{{@name}}}",
-	"version": "{{{@version}}}",
-	"description": "{{{@description}}}",
-	{{#if @author}}
-	"author": "{{{@author.name}}} <{{{@author.email}}}>",
-	{{/if}}
-	{{#if homepage}}
-	"homepage": "{{{homepage}}}",
-	{{/if}}
-	{{#if private}}
-	"private": true,
-	{{/if}}
-	{{#if bin}}
+	"version": "{{{@version}}}"
 	
-	"bin": {
+	{{#if @description}}
+	,"description": "{{{@description}}}"
+	{{/if}}
+	
+	{{#if @author}}
+	,"author": "{{{@author.name}}} <{{{@author.email}}}>"
+	{{/if}}
+	
+	{{#if license}}
+	,"license": "{{license}}"
+	{{/if}}
+	
+	{{#if homepage}}
+	,"homepage": "{{{homepage}}}"
+	{{/if}}
+	
+	{{#if private}}
+	,"private": true
+	{{/if}}
+	
+	{{#if bin}}
+	,"bin": {
 		{{#bin}}
 		"{{{name}}}": "{{{path}}}"{{#unless @last}},{{/unless}}
 		{{/bin}}
-	},
+	}
 	{{/if}}
 	
-	"dependencies": {
+	{{#if dependencies}}
+	,"dependencies": {
 		{{#dependencies}}
 		"{{{name}}}": "{{{version}}}"{{#unless @last}},{{/unless}}
 		{{/dependencies}}
-	}{{#if devDependencies}},
-	"devDependencies": {
+	}
+	{{/if}}
+	
+	{{#if devDependencies}}
+	,"devDependencies": {
 		{{#devDependencies}}
 		"{{{name}}}": "{{{version}}}"{{#unless @last}},{{/unless}}
 		{{/devDependencies}}
-	}{{/if}}{{#if license}},
+	}
+	{{/if}}
 	
-	"license": "{{license}}"{{/if}}{{#if keywords}},
-	
-	"keywords": [
+	{{#if keywords}},
+	,"keywords": [
 		{{#keywords}}
 		"{{{keyword}}}"{{#unless @last}},{{/unless}}
 		{{/keywords}}
-	]{{/if}}{{#if @repository}},
+	]
+	{{/if}}
 	
-	"repository": {
+	{{#if @repository}}
+	,"repository": {
 		"type": "{{{@repository.type}}}",
 		"url": "{{{@repository.url}}}"
 	}
