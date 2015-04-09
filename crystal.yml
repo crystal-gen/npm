@@ -30,11 +30,17 @@ gen:
       type: string
     license:
       type: string
+    main:
+      type: string
     keywords:
       key: keyword
       type: array
     private:
       type: string
+    scripts:
+      key: name
+      type: object
+      value: script
       
 generators:
   gitignore:

@@ -55,10 +55,22 @@
 	]
 	{{/if}}
 	
+	{{#if main}}
+	,"main": "{{{main}}}"
+	{{/if}}
+	
 	{{#if @repository}}
 	,"repository": {
 		"type": "{{{@repository.type}}}",
 		"url": "{{{@repository.url}}}"
+	}
+	{{/if}}
+
+	{{#if scripts}}
+	,"scripts": {
+		{{#scripts}}
+		"{{{name}}}": "{{{script}}}"{{#unless @last}},{{/unless}}
+		{{/scripts}}
 	}
 	{{/if}}
 
