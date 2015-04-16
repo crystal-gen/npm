@@ -1,0 +1,92 @@
+name: {{{@name}}}
+version: {{{@version}}}
+
+{{#if @description}}
+description: '{{{@description}}}'
+{{/if}}
+
+{{#if @author}}
+author: '{{{@author.name}}} <{{{@author.email}}}>'
+{{/if}}
+
+{{#if bugs}}
+bugs:
+  {{#if bugs.url}}
+  url: {{bugs.url}}
+  {{/if}}
+  {{#if bugs.email}}
+  email: {{bugs.email}}
+  {{/if}}
+{{/if}}
+
+{{#if license}}
+license: {{license}}
+{{/if}}
+
+{{#if homepage}}
+homepage: '{{{homepage}}}'
+{{/if}}
+
+{{#if private}}
+private: true
+{{/if}}
+
+{{#if bin}}
+bin:
+  {{#bin}}
+  {{{name}}}: '{{{path}}}'
+  {{/bin}}
+{{/if}}
+
+{{#if dependencies}}
+dependencies:
+  {{#dependencies}}
+  {{{name}}}: '{{{version}}}'
+  {{/dependencies}}
+{{/if}}
+
+{{#if devDependencies}}
+devDependencies:
+  {{#devDependencies}}
+  {{{name}}}: '{{{version}}}'
+  {{/devDependencies}}
+{{/if}}
+
+{{#if keywords}}
+keywords:
+  {{#keywords}}
+  - {{{keyword}}}
+  {{/keywords}}
+]
+{{/if}}
+
+{{#if main}}
+main: {{{main}}}
+{{/if}}
+
+{{#if cpu}}
+cpu:
+  {{#cpu}}
+  - {{{this}}}
+  {{/cpu}}
+{{/if}}
+
+{{#if os}}
+os:
+  {{#os}}
+  - {{{this}}}
+  {{/os}}
+{{/if}}
+
+{{#if @repository}}
+repository:
+  type: {{{@repository.type}}}
+  url: '{{{@repository.url}}}'
+{{/if}}
+
+{{#if scripts}}
+scripts:
+  {{#scripts}}
+  {{{name}}}: '{{{script}}}'
+  {{/scripts}}
+{{/if}}

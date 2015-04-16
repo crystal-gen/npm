@@ -21,9 +21,10 @@ doc:
 
 gen:
   file:
-    package:
+    package.yml:
       dest: package.json
-      type: json
+      decoder: yaml
+      encoder: json
   schema:
     type: object
     properties:
@@ -31,7 +32,6 @@ gen:
         type: object
         properties:
           email:
-            required: true
             type: string
           url:
             type: string
@@ -57,6 +57,10 @@ gen:
               type: string
       name:
         type: string
+      os:
+        type: array
+        items:
+          type: string
       private:
         type: boolean
       version:
