@@ -8,40 +8,60 @@ author:
   url: http://studiotate.com
 copyright: 2015 Studio Tate
 
+doc:
+  usage:
+    title: Usage
+    pages:
+      schema:
+        title: Schema
+      example:
+        title: Example
+      output:
+        title: Output
+
 gen:
   file:
     package:
       dest: package.json
       type: json
-  spec:
-    bin:
-      key: name
-      type: object
-      value: path
-    dependencies:
-      key: name
-      type: object
-      value: version
-    devDependencies:
-      key: name
-      type: object
-      value: version
-    homepage:
-      type: string
-    license:
-      type: string
-    main:
-      type: string
-    keywords:
-      key: keyword
-      type: array
-    private:
-      type: string
-    scripts:
-      key: name
-      type: object
-      value: script
-      
+  schema:
+    type: object
+    properties:
+      bugs:
+        type: object
+        properties:
+          email:
+            required: true
+            type: string
+          url:
+            type: string
+      dependencies:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            version:
+              type: string
+      description:
+        type: string
+      devDependencies: &dependencies
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            version:
+              type: string
+      name:
+        type: string
+      private:
+        type: boolean
+      version:
+        type: string
+
 generators:
   gitignore:
     pass: true

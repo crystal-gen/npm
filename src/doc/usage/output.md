@@ -1,3 +1,6 @@
+### lib/package.json
+
+```json
 {
 	"name": "npm-test",
 	"version": "0.1.0",
@@ -9,3 +12,4 @@
 		"express-session": "~1.10.4"
 	}
 }
+```

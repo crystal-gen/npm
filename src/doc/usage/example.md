@@ -1,3 +1,4 @@
+```yaml
 name: npm-test
 version: 0.1.0
 
@@ -15,3 +16,4 @@ generators:
         - name: express-session
           version: "~1.10.4"
     version: latest
+```
