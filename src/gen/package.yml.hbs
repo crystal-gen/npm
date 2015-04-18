@@ -33,31 +33,30 @@ private: true
 
 {{#if bin}}
 bin:
-  {{#bin}}
-  {{{name}}}: '{{{path}}}'
-  {{/bin}}
+  {{#each bin}}
+  {{{@key}}}: '{{{this}}}'
+  {{/each}}
 {{/if}}
 
 {{#if dependencies}}
 dependencies:
-  {{#dependencies}}
-  {{{name}}}: '{{{version}}}'
-  {{/dependencies}}
+  {{#each dependencies}}
+  {{{@key}}}: '{{{this}}}'
+  {{/each}}
 {{/if}}
 
 {{#if devDependencies}}
 devDependencies:
-  {{#devDependencies}}
-  {{{name}}}: '{{{version}}}'
-  {{/devDependencies}}
+  {{#each devDependencies}}
+  {{{@key}}}: '{{{this}}}'
+  {{/each}}
 {{/if}}
 
 {{#if keywords}}
 keywords:
-  {{#keywords}}
-  - {{{keyword}}}
-  {{/keywords}}
-]
+  {{#each keywords}}
+  - {{{this}}}
+  {{/each}}
 {{/if}}
 
 {{#if main}}
@@ -86,7 +85,7 @@ repository:
 
 {{#if scripts}}
 scripts:
-  {{#scripts}}
-  {{{name}}}: '{{{script}}}'
-  {{/scripts}}
+  {{#each scripts}}
+  {{{@key}}}: '{{{this}}}'
+  {{/each}}
 {{/if}}
