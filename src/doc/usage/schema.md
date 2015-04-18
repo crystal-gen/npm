@@ -26,23 +26,17 @@ repository:           # object
   url:                # string
 scripts:              # object
 dependencies:         # array of objects
-  - name:             # string
-    version:          # string
+  $name:              # string
 devDependencies:      # array of objects
-  - name:             # string
-    version:          # string
+  $name:              # string
 peerDependencies:     # array of objects
-  - name:             # string
-    version:          # string
+  $name:              # string
 bundleDependencies:   # array of objects
-  - name:             # string
-    version:          # string
+  $name:              # string
 optionalDependencies: # array of objects
-  - name:             # string
-    version:          # string
+  $name:              # string
 engines:              # array of objects
-  - name:             # string
-    version:          # string
+  $name:              # string
 os:                   # array of strings
 cpu:                  # array of strings
 private:              # boolean
