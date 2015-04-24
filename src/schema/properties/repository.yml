@@ -1,0 +1,7 @@
+config: true
+type: object
+properties:
+  type:
+    type: string
+  url:
+    type: string

@@ -1,0 +1,11 @@
+config: true
+type:
+  - object
+  - string
+properties:
+  name:
+    type: string
+  email:
+    type: string
+  url:
+    type: string

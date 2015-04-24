@@ -21,95 +21,12 @@ doc:
 
 gen:
   file:
-    package.yml:
-      dest: package.json
-      decoder: yaml
+    package.json:
       encoder: json
-  schema:
-    type: object
-    properties:
-      author:
-        type: object
-        properties:
-          name:
-            type: string
-          email:
-            type: string
-          url:
-            type: string
-      bin:
-        type: object
-        additionalProperties:
-          type: string
-      bugs:
-        type: object
-        properties:
-          email:
-            type: string
-          url:
-            type: string
-      bundleDependencies: &dependencies
-        type: object
-        additionalProperties:
-          type: string
-      contributors:
-        type: array
-        items:
-          type: object
-          properties:
-            name:
-              type: string
-            email:
-              type: string
-            url:
-              type: string
-      cpu:
-        type: array
-        items:
-          type: string
-      dependencies: *dependencies
-      description:
-        type: string
-      devDependencies: *dependencies
-      engines:
-        type: object
-        additionalProperties:
-          type: string
-      files:
-        type: array
-        items:
-          type: string
-      homepage:
-        type: string
-      keywords:
-        type: array
-        items:
-          type: string
-      license:
-        type: string
-      name:
-        type: string
-      optionalDependencies: *dependencies
-      os:
-        type: array
-        items:
-          type: string
-      peerDependencies: *dependencies
-      private:
-        type: boolean
-      repository:
-        type: object
-        properties:
-          type:
-            type: string
-          url:
-            type: string
-      scripts:
-        type: object
-        additionalProperties:
-          type: string
-      version:
-        type: string
+
+schema:
+  type: object
+  additionalProperties: false
 
 generators:
   gitignore:
